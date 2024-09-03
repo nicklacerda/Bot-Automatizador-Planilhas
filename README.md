@@ -34,3 +34,21 @@ Para instalar a biblioteca `openpyxl`, utilize o seguinte comando:
 ```bash
 pip install openpyxl
 
+Como Usar
+Certifique-se de ter a planilha Excel original como Planilha_Original.xlsx na mesma pasta que o script.
+Execute o script codigo_automacao.py. Ele criará abas separadas para cada bairro encontrado e transferirá as informações.
+O arquivo atualizado será salvo como Planilha_Pos_Automacao.xlsx na mesma pasta onde o script foi executado.
+Exemplo de Planilha de Entrada
+A aba "Base de Dados" da planilha original deve conter as seguintes colunas:
+
+Data de Nascimento
+Pessoa
+Bairro
+Cada linha subsequente deve conter os dados correspondentes para uma pessoa.
+
+Contribuição
+Se você deseja contribuir para este projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+Licença
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter mais informações.
+
