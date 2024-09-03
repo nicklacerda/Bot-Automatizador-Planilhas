@@ -24,16 +24,6 @@ Este projeto em Python automatiza o processo de organização dos dados de uma p
 - **aba_basedados = arquivo_bairros["Base de Dados"]**: Define a aba principal que contém os dados de origem.
 - **arquivo_bairros.save("Planilha_Pos_Automacao.xlsx")**: Salva o arquivo Excel atualizado com os dados organizados.
 
-## Requisitos
-
-- Python 3.x
-- Biblioteca `openpyxl`
-
-Para instalar a biblioteca `openpyxl`, utilize o seguinte comando:
-
-```bash
-pip install openpyxl
-
 Como Usar
 Certifique-se de ter a planilha Excel original como Planilha_Original.xlsx na mesma pasta que o script.
 Execute o script codigo_automacao.py. Ele criará abas separadas para cada bairro encontrado e transferirá as informações.
@@ -51,4 +41,14 @@ Se você deseja contribuir para este projeto, sinta-se à vontade para abrir uma
 
 Licença
 Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter mais informações.
+
+## Requisitos
+
+- Python 3.x
+- Biblioteca `openpyxl`
+
+Para instalar a biblioteca `openpyxl`, utilize o seguinte comando:
+
+```bash
+pip install openpyxl
 
