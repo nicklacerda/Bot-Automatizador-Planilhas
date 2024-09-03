@@ -1,7 +1,7 @@
-# percorrer toda a nosa base de dados
+# percorrer toda a base de dados (planilha)
 # para cada item
-    #   ver se o bairro ja existe em uma aba, se não existir, criar aquela aba
-    #   copiar os valores daquela linha e colocar na aba do bairro correspondente
+    # ver se o bairro já existe em uma aba, se não existir, criar aquela aba
+    # copiar os valores daquela linha e colocar na aba do bairro correspondente
 
 from openpyxl import load_workbook
 from copy import copy
@@ -18,7 +18,6 @@ def criar_aba(bairro, arquivo_bairros, estilos_cabecalho):
         nova_aba["B1"]._style = estilos_cabecalho
         nova_aba["C1"]._style = estilos_cabecalho
 
-
 def tranferir_informacoes_aba(aba_origem, aba_destino, linha_origem):
     linha_destino = aba_destino.max_row + 1
     for coluna in range(1, 4):
@@ -27,7 +26,8 @@ def tranferir_informacoes_aba(aba_origem, aba_destino, linha_origem):
         celular_destino.value = celula_origem.value
         celular_destino._style = copy(celula_origem._style)
 
-arquivo_bairros = load_workbook("C:\\Users\cesl\Downloads\Bairros.xlsx")
+# Carregar a planilha original
+arquivo_bairros = load_workbook("Planilha_Original.xlsx")
 
 print(arquivo_bairros.sheetnames)
 
@@ -36,14 +36,15 @@ ultima_linha = aba_basedados.max_row
 estilos_cabecalho = copy(aba_basedados["A1"]._style)
 for linha in range(2, ultima_linha + 1):
     bairro = aba_basedados.cell(row=linha, column=3).value
-    # bairro = aba_basedados[f"C{linha}"].value
     if not bairro:
         break
-    # criar uma aba pro bairro
+    # criar uma aba para o bairro
     criar_aba(bairro, arquivo_bairros, estilos_cabecalho)
 
-    # tranferir as informçaões pra aba
+    # transferir as informações para a aba
     aba_destino = arquivo_bairros[bairro]
     tranferir_informacoes_aba(aba_basedados, aba_destino, linha)
 
-arquivo_bairros.save("Bairros.xlsx")
+# Salvar a planilha modificada
+arquivo_bairros.save("Planilha_Pos_Automacao.xlsx")
+
